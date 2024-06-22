@@ -1,6 +1,6 @@
 import requests
 
-WEAPI = 
+WEAPI = os.getenv('WEAPI')
 
 def wemessage(WEAPI)
 url = f"https://api.anpush.com/push/{WEAPI}"
