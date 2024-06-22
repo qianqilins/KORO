@@ -2,7 +2,7 @@ import requests
 
 WEAPI = os.getenv('WEAPI')
 
-def wemessage(WEAPI, CONTENT)
+def wemessage(WEAPI, CONTENT):
     url = f"https://api.anpush.com/push/{WEAPI}"
     payload = {
         "title": "鸣潮",
