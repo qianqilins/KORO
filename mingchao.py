@@ -1,7 +1,7 @@
 from log import mc_message
 import requests, json, datetime, os, sys, re, time
 
-
+token = os.getenv('COOKIE')
 
 # 获取鸣潮表单
 def mingchaoTable(token):
