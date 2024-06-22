@@ -1,7 +1,7 @@
 import logging, time
 
-mclog = f'[log]mc_{time.strftime("%Y%m%d_%H%M%S")}.log'
-zslog = f'[log]zs_{time.strftime("%Y%m%d_%H%M%S")}.log'
+mc_log = f'[log]mc_{time.strftime("%Y%m%d_%H%M%S")}.log'
+zs_log = f'[log]zs_{time.strftime("%Y%m%d_%H%M%S")}.log'
 
 def setup_logger(logfile):
     logger = logging.getLogger()
@@ -17,10 +17,10 @@ def setup_logger(logfile):
         console_handler.setFormatter(formatter)
         logger.addHandler(console_handler)
 
-def mc_message(message, logfile=mclog):
+def mc_message(message, logfile=mc_log):
     setup_logger(logfile)
     logging.info(message)
 
-def zs_message(message, logfile=zslog):
+def zs_message(message, logfile=zs_log):
     setup_logger(logfile)
     logging.info(message)
