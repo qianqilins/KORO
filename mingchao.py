@@ -166,7 +166,8 @@ class mingchaoTableCode:
 
 mc = mingchaoTableCode()
 
-CONTENT = mingchaoWrite() + mingchaoIndexWrite(token, mc.roleId, mc.userId)
+mingchaoWrite()
+mingchaoIndexWrite(token, mc.roleId, mc.userId)
 
 # 触发签到
 if mc.signInTxt != '已完成签到':
