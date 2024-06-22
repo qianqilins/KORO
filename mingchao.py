@@ -1,4 +1,5 @@
 from log import mc_log, mc_message
+from wechat import wemessage
 import requests, json, datetime, os, sys, re, time
 
 token = os.getenv('COOKIE')
