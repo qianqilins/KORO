@@ -166,10 +166,11 @@ class mingchaoTableCode:
 
 mc = mingchaoTableCode()
 
-mingchaoWrite()
-mingchaoIndexWrite(token, mc.roleId, mc.userId)
+CONTENT = mingchaoWrite()
+CONTENT += mingchaoIndexWrite(token, mc.roleId, mc.userId)
 
 # 触发签到
 if mc.signInTxt != '已完成签到':
     mingchaoSignin(token, mc.roleId, mc.userId, mc.month)
 
+wemessage(WEAPI, CONTENT)
