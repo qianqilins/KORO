@@ -1,4 +1,4 @@
-import logging, time, os
+import logging, time
 
 def setup_logger(logfile):
     logger = logging.getLogger()
@@ -14,10 +14,10 @@ def setup_logger(logfile):
         console_handler.setFormatter(formatter)
         logger.addHandler(console_handler)
 
-def mc_message(message, logfile=f'logs/[log]mc_{time.strftime("%Y%m%d_%H%M%S")}.log'):
+def mc_message(message, logfile=f'[log]mc_{time.strftime("%Y%m%d_%H%M%S")}.log'):
     setup_logger(logfile)
     logging.info(message)
 
-def zs_message(message, logfile=f'logs/[log]zs_{time.strftime("%Y%m%d_%H%M%S")}.log'):
+def zs_message(message, logfile=f'[log]zs_{time.strftime("%Y%m%d_%H%M%S")}.log'):
     setup_logger(logfile)
     logging.info(message)
