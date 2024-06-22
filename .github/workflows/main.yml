@@ -31,4 +31,5 @@ jobs:
     - name: Run script
       env:
         COOKIE: ${{ secrets.COOKIE }}
+        WEAPI: ${{ secrets.WEAPI }}
       run: python mingchao.py
