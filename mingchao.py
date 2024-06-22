@@ -173,5 +173,5 @@ mingchaoIndexWrite(token, mc.roleId, mc.userId)
 if mc.signInTxt != '已完成签到':
     mingchaoSignin(token, mc.roleId, mc.userId, mc.month)
 
-with open(log_filename, 'r') as CONTENT:
+with open(mclog, 'r') as CONTENT:
     wemessage(WEAPI, CONTENT)
