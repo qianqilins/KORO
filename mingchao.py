@@ -3,6 +3,7 @@ from wechat import wemessage
 import requests, json, datetime, os, sys, re, time
 
 token = os.getenv('COOKIE')
+WEAPI = os.getenv('WEAPI')
 
 # 获取鸣潮表单
 def mingchaoTable(token):
