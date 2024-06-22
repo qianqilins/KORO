@@ -1,27 +1,36 @@
 name: 鸣潮签到
 
-on:
-  schedule:
-    - cron: "0 17 * * *"
+name: AutoCheckin
+
+on: 
   workflow_dispatch:
-
+  release:
+    types: [published]
+  push:
+    tags:
+    - 'v*'
+  #  branches: 
+  #    - master
+  schedule:
+    - cron: "0 23 * * *"
+  watch:
+    types: [started]
+   
 jobs:
-  run-script:
+  build:
     runs-on: ubuntu-latest
-
+    # if: github.event.repository.owner.id == github.event.sender.id  # 自己点的 start
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v2
-
-    - name: Set up Python
-      uses: actions/setup-python@v2
+    - name: Checkout
+      uses: actions/checkout@master
+    - name: Set up Python #安装python
+      uses: actions/setup-python@v4
       with:
-        python-version: 3.x
-
-    - name: Install dependencies
-      run: pip install -r requirements.txt
-
-    - name: 总脚本
+        python-version: '3.10'
+    - name: Install requirements #安装轮子
+      run: |
+        pip install -r requirements.txt
+    - name: Run script
       env:
         COOKIE: ${{ secrets.COOKIE }}
       run: python mingchao.py
