@@ -1,10 +1,11 @@
 import requests
 
-def wemessage(WEAPI, CONTENT):
+def wemessage(WEAPI, WEUSERID, CONTENT):
     url = f"https://api.anpush.com/push/{WEAPI}"
     payload = {
         "title": "鸣潮",
-        "channel": "微信通知",
+        "channel": "01100",
+        "to": WEUSERID,
         "content": CONTENT
     }
     headers = {

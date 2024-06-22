@@ -4,6 +4,7 @@ import requests, json, datetime, os, sys, re, time
 
 token = os.getenv('COOKIE')
 WEAPI = os.getenv('WEAPI')
+WEUSERID = os.getenv('WEUSERID')
 
 # 获取鸣潮表单
 def mingchaoTable(token):
@@ -106,13 +107,13 @@ def mingchaoIndexWrite(token, roleId, userId):
     countryProgress = data['data']['countryProgress']
     mc_message('地区　　：'+countryName)
     mc_message('收集度　：'+countryProgress+'%')
-    mc_message("-"*60)
+    # mc_message("-"*60)
     for i in range(len(areaInfoList)-1):
         areaName = areaInfoList[i]['areaName']
         if len(str(areaName)) <= 4:
             areaName = areaName + '　' * (4-len(str(areaName)))
         areaProgress = areaInfoList[i]['areaProgress']
-        mc_message(areaName+' · ['+' '*(3-len(str(areaProgress)))+str(areaProgress)+'%'+' '+'█'*int(areaProgress/4)+'═'*(25-int(areaProgress/4))+']')
+        mc_message(areaName+' · ['+' '*(3-len(str(areaProgress)))+str(areaProgress)+'%'+' '+'█'*int(areaProgress/10)+'═'*(10-int(areaProgress/10))+']')
         itemList = areaInfoList[i]['itemList']
         for t in range(len(itemList)-1):
             itemName = itemList[t]['name']
@@ -121,33 +122,33 @@ def mingchaoIndexWrite(token, roleId, userId):
                 itemName = re.sub(r'^(.)', r'\1　', itemName)
             itemProgress = itemList[t]['progress']
             itemPercentage = ' '*(3-len(str(itemProgress)))+str(itemProgress)+'%'
-            itemBar = '|'+'█'*int(itemProgress/4)+'═'*(25-int(itemProgress/4))+'|'
+            itemBar = '|'+'█'*int(itemProgress/10)+'═'*(10-int(itemProgress/10))+'|'
 
-            mc_message(' ---  '+itemName+itemBar+itemPercentage)
-        mc_message("-"*60)
+            mc_message(' > 　　'+itemName+itemBar+itemPercentage)
+        # mc_message("-"*60)
 
 # 鸣潮表单写出
 def mingchaoWrite():
     # 基本
-    mc_message("-"*60)
+    # mc_message("-"*60)
     mc_message('游戏：'+mc.serverName)
     mc_message('昵称：'+mc.roleName+' · 特征码：'+str(mc.roleId))
     mc_message('时间：'+str(mc.serverTime))
     mc_message('状态：'+mc.signInTxt)
-    mc_message("-"*60)
+    # mc_message("-"*60)
 
     dataTableName = [mc.energyData['name'], mc.livenessData['name']+'　', mc.battlePassData[0]['name'], mc.battlePassData[1]['name']]
     dataTableNum = [mc.energyData['cur'], mc.livenessData['cur'], mc.battlePassData[0]['cur'], mc.battlePassData[1]['cur']]
     dataTableMax = [240, 100, 70, 10000]
     for i in range(len(dataTableName)):
         name = dataTableName[i]
-        mathCount = dataTableMax[i]/20
+        mathCount = dataTableMax[i]/10
         progress = str(dataTableNum[i])+'/'+str(dataTableMax[i])
         progress = ' '*(int(11-len(progress)))+progress
         bar = '█'*(int(dataTableNum[i]/mathCount))+'═'*(int(dataTableMax[i]/mathCount)-int(dataTableNum[i]/mathCount))
         mc_message(name+'：['+bar+progress+']')
     mc_message('（备注：活跃度数据有延迟。）')
-    mc_message("-"*60)
+    # mc_message("-"*60)
 
 class mingchaoTableCode:
     data = json.loads(str(mingchaoTable(token)))
@@ -175,5 +176,5 @@ mingchaoIndexWrite(token, mc.roleId, mc.userId)
 if mc.signInTxt != '已完成签到':
     mingchaoSignin(token, mc.roleId, mc.userId, mc.month)
 
-with open(mc_log, 'r') as CONTENT:
-    wemessage(WEAPI, CONTENT)
+with open(mc_log, 'r', encoding='GBK') as CONTENT:
+    wemessage(WEAPI, WEUSERID, CONTENT.read().replace('\n', '<br>'))
