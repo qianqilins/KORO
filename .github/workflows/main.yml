@@ -1,7 +1,5 @@
 name: 鸣潮签到
 
-name: AutoCheckin
-
 on: 
   workflow_dispatch:
   release:
