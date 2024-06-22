@@ -1,4 +1,4 @@
-from log import mc_message
+from log import mclog, mc_message
 import requests, json, datetime, os, sys, re, time
 
 token = os.getenv('COOKIE')
@@ -173,4 +173,5 @@ mingchaoIndexWrite(token, mc.roleId, mc.userId)
 if mc.signInTxt != '已完成签到':
     mingchaoSignin(token, mc.roleId, mc.userId, mc.month)
 
-wemessage(WEAPI, CONTENT)
+with open(log_filename, 'r') as CONTENT:
+    wemessage(WEAPI, CONTENT)
