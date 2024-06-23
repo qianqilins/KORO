@@ -9,7 +9,7 @@ def setup_logger(logfile):
         logger.setLevel(logging.INFO)
         formatter = logging.Formatter('%(message)s')
 
-        file_handler = logging.FileHandler(logfile)
+        file_handler = logging.FileHandler(logfile,'a','utf-8'))
         file_handler.setFormatter(formatter)
         logger.addHandler(file_handler)
 
