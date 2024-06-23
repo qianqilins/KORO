@@ -1,2 +1,2 @@
 # KORO
-用 GITHUB ACTIONS 给鸣潮签到。
+用 GITHUB ACTIONS 给鸣潮签到
