@@ -1,4 +1,4 @@
-import logging, time
+import logging, time, os
 
 mc_log = f'[log]mc_{time.strftime("%Y%m%d_%H%M%S")}.log'
 zs_log = f'[log]zs_{time.strftime("%Y%m%d_%H%M%S")}.log'
@@ -24,3 +24,10 @@ def mc_message(message, logfile=mc_log):
 def zs_message(message, logfile=zs_log):
     setup_logger(logfile)
     logging.info(message)
+
+# 清理冗余日志
+def logclean(key, logfile):
+    for root, dirs, files in os.walk(os.getcwd()):
+        for file in files:
+            if file.endswith('.log') and file != logfile and key in file:
+                os.remove(os.path.join(root, file))
