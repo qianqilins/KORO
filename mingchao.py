@@ -176,6 +176,6 @@ mingchaoIndexWrite(token, mc.roleId, mc.userId)
 if mc.signInTxt != '已完成签到':
     mingchaoSignin(token, mc.roleId, mc.userId, mc.month)
 
-with open(mc_log, 'r', encoding='gbk', errors='ignore') as CONTENT:
+with open(mc_log, 'r', encoding='utf-8', errors='ignore') as CONTENT:
     print(CONTENT.read())
     # wemessage(WEAPI, WEUSERID, CONTENT.read().replace('\n', '<br>'))
