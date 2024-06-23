@@ -33,5 +33,4 @@ jobs:
         WEAPI: ${{ secrets.WEAPI }}
         WEUSERID: ${{ secrets.WEUSERID }}
       run: python mcMain.py
-        python zsMain.py
       
