@@ -31,4 +31,5 @@ jobs:
       env:
         COOKIE: ${{ secrets.COOKIE }}
         WEAPI: ${{ secrets.WEAPI }}
+        WEUSERID: ${{ secrets.WEUSERID }}
       run: python mingchao.py
