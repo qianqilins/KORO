@@ -58,7 +58,7 @@ def zsWrite(gameName, roleName, roleId, serverTime, signInTxt, actionData, dormD
     # 基本
     zs_message("-"*50)
     zs_message('游戏：'+gameName)
-    zs_message('昵称：'+roleName+' · 编号：'+str(roleId))
+    # zs_message('昵称：'+roleName+' · 编号：'+str(roleId))
     zs_message('时间：'+str(serverTime))
     zs_message('状态：'+signInTxt)
     zs_message("-"*50)
