@@ -43,4 +43,4 @@ zsBossWrite(zs.bossData)
 # zsCharWrite(token, zs.roleId)
 
 logclean('zs_',zs_log)
-os.system("pause")
+# os.system("pause")
