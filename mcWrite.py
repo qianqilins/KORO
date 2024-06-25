@@ -21,6 +21,7 @@ def mcIndex(token, roleId, userId):
         "countryCode":"1"
     }
     response = requests.post(url, headers=headers, data=data)
+    response.raise_for_status()
     return response.text
 
 # 获取鸣潮基本资料
@@ -41,6 +42,7 @@ def mcBaseData(token, roleId, userId):
         "countryCode":"1"
     }
     response = requests.post(url, headers=headers, data=data)
+    response.raise_for_status()
     return response.text
 
 # 获取鸣潮角色资料
@@ -61,6 +63,7 @@ def mcRoleData(token, roleId, userId):
         "countryCode":"1"
     }
     response = requests.post(url, headers=headers, data=data)
+    response.raise_for_status()
     return response.text
 
 # 鸣潮基本资料写出
@@ -78,8 +81,6 @@ def mcBaseWrite(token, roleId, userId):
     smallCount = data['data']['smallCount']
 
     boxList = data['data']['boxList']
-
-    mc_message("-"*50)
 
     mc_message('游戏天数 '+str(activeDays)+' 联觉等级 '+str(level)+' 索拉等级 '+str(worldLevel)+' 达成成就 '+str(achievementCount))
     mc_message('解锁角色 '+str(roleNum)+' 背包声匣 '+str(soundBox)+' 中型信标 '+str(bigCount)+' 小型信标 '+str(smallCount))
@@ -102,14 +103,14 @@ def mcIndexWrite(token, roleId, userId):
     countryProgress = data['data']['countryProgress']
     mc_message('地区：'+countryName+' · 收集度：'+countryProgress+'%')
     mc_message("-"*50)
-    for i in range(len(areaInfoList)-1):
+    for i in range(len(areaInfoList)):
         areaName = areaInfoList[i]['areaName']
         if len(str(areaName)) <= 4:
             areaName = areaName + '　' * (4-len(str(areaName)))
         areaProgress = areaInfoList[i]['areaProgress']
-        mc_message(areaName+' · ['+' '*(3-len(str(areaProgress)))+str(areaProgress)+'%'+' '+'█'*int(areaProgress/LWide)+'═'*(int(100/LWide)-int(areaProgress/LWide))+']')
+        mc_message(areaName+' - ['+' '*(3-len(str(areaProgress)))+str(areaProgress)+'%'+' '+'█'*int(areaProgress/LWide)+'═'*(int(100/LWide)-int(areaProgress/LWide))+']')
         itemList = areaInfoList[i]['itemList']
-        for t in range(len(itemList)-1):
+        for t in range(len(itemList)):
             itemName = itemList[t]['name']
             itemNames = itemName+'　'*(int(3-len(itemName)))
             if len(str(itemName)) == 2:
@@ -121,14 +122,11 @@ def mcIndexWrite(token, roleId, userId):
             mc_message(' > 　　'+itemName+itemBar+itemPercentage)
         mc_message("-"*50)
 
-
-
-
 # 鸣潮服务终端写出
 def mcServerWrite(roleId, roleName, serverName, serverTime, signInTxt, energyData, livenessData, battlePassData):
     mc_message("-"*50)
     mc_message('游戏：'+serverName)
-    mc_message('昵称：'+roleName+' · 特征码：'+str(roleId))
+    # mc_message('昵称：'+roleName+' · 特征码：'+str(roleId))
     mc_message('时间：'+str(serverTime))
     mc_message('状态：'+signInTxt)
     mc_message("-"*50)

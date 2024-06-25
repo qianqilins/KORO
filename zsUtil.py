@@ -15,6 +15,7 @@ def zhansuangTable(token, devCode):
         "sizeType": "1"
     }
     response = requests.post(url, headers=headers, data=data)
+    response.raise_for_status()
     return response.text
 
 def zhansuangRefresh(token, devCode):
@@ -32,4 +33,22 @@ def zhansuangRefresh(token, devCode):
         "sizeType": "1"
     }
     response = requests.post(url, headers=headers, data=data)
+    response.raise_for_status()
+    return response.text
+
+def serverSwich(token, devCode):
+    url = "http://api.kurobbs.com/config/dict/timingSwitch"
+    headers = {
+        "version": "2.2.0",
+        "devCode": devCode,
+        "source": "android",
+        "token": token,
+        "countryCode": "CN",
+        "lang": "zh-Hans",
+        "channelId": "2",
+        "Cookie": f"user_token={token}"
+
+    }
+    response = requests.get(url, headers=headers, timeout=30)
+    response.raise_for_status()
     return response.text
