@@ -31,8 +31,9 @@ class zhansuangTableCode:
 
 zs = zhansuangTableCode()
 
-if zs.signInTxt != '已领取每日补给':
-    print('获得补给：'+zhansuangSignin(token, devCode, zs.roleId, zs.userId))
+# if zs.signInTxt != '已领取每日补给':
+#     print('获得补给：'+zhansuangSignin(token, devCode, zs.roleId, zs.userId))
+print('获得补给：'+zhansuangSignin(token, devCode, zs.roleId, zs.userId))
 
 zhansuangWrite(zs.gameName, zs.roleName, zs.roleId, zs.serverTime, zs.signInTxt, zs.actionData, zs.dormData, zs.activeData)
 zhansuangBossWrite(zs.bossData)
