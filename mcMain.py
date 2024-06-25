@@ -39,4 +39,4 @@ print(mingchaoSignin(token, mc.roleId, mc.userId))
 # ==============================================================================
 
 logclean('mc_',mc_log)
-os.system("pause")
+# os.system("pause")
