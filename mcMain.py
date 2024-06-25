@@ -32,7 +32,7 @@ mcBaseWrite(token, mc.roleId, mc.userId)
 mcIndexWrite(token, mc.roleId, mc.userId)
 
 # 云端不做判断
-mingchaoSignin(token, mc.roleId, mc.userId)
+print(mingchaoSignin(token, mc.roleId, mc.userId))
 # if mc.signInTxt != '已完成签到':
 #     print('获得补给：'+mingchaoSignin(token, mc.roleId, mc.userId))
 
