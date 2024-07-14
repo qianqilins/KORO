@@ -32,7 +32,7 @@ zs = zhansuangTableCode()
 serverSwich(token, devCode)
 
 # 云端不做判断
-print(zhansuangSignin(token, devCode, zs.roleId, zs.userId))
+print('签到\n'+zhansuangSignin(token, devCode, zs.roleId, zs.userId))
 # if zs.signInTxt != '已领取每日补给':
 #     print('获得补给：'+zhansuangSignin(token, devCode, zs.roleId, zs.userId))
 
