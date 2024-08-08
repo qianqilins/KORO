@@ -76,7 +76,7 @@ def mcBaseWrite(token, roleId, userId):
     achievementCount = data['data']['achievementCount']
 
     roleNum = data['data']['roleNum']
-    soundBox = data['data']['soundBox']
+    soundBox = data['data'].get('soundBox')
     bigCount = data['data']['bigCount']
     smallCount = data['data']['smallCount']
 
