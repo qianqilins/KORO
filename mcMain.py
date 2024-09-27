@@ -27,7 +27,7 @@ mc = mingchaoTableCode()
 serverSwich(token, devCode)
 
 mcServerWrite(mc.roleId,mc.roleName,mc.serverName,mc.serverTime,mc.signInTxt,mc.energyData,mc.livenessData,mc.battlePassData)
-mcBaseWrite(token, mc.roleId, mc.userId)
+# mcBaseWrite(token, mc.roleId, mc.userId)
 # 区域探索度
 # mcIndexWrite(token, mc.roleId, mc.userId)
 
