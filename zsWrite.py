@@ -7,8 +7,8 @@ def zsroleList(token, roleId):
     url = "http://api.kurobbs.com/gamer/roleBox/roleList"
     headers = {
     "source": "android",
-    "devCode": "Kuro/2.2.0 KuroGameBox/2.2.0",
-    "User-Agent": "Kuro/2.2.0 KuroGameBox/2.2.0",
+    "devCode": "Kuro/2.4.4 KuroGameBox/2.4.4",
+    "User-Agent": "Kuro/2.4.4 KuroGameBox/2.4.4",
             "token": token
     }
     data = {
@@ -24,8 +24,8 @@ def zscharInfo(token, roleId, charId):
     url = "http://api.kurobbs.com/gamer/roleBox/characterInfo"
     headers = {
     "source": "android",
-    "devCode": "Kuro/2.2.0 KuroGameBox/2.2.0",
-    "User-Agent": "Kuro/2.2.0 KuroGameBox/2.2.0",
+    "devCode": "Kuro/2.4.4 KuroGameBox/2.4.4",
+    "User-Agent": "Kuro/2.4.4 KuroGameBox/2.4.4",
     "token": token
     }
     data = {
@@ -44,7 +44,7 @@ def zsMonth(token, roleId):
     headers = {
         "Host": "api.kurobbs.com",
         "source": "android",
-        "User-Agent": "Kuro/2.2.0 KuroGameBox/2.2.0",
+        "User-Agent": "Kuro/2.4.4 KuroGameBox/2.4.4",
         "token": token
         }
     data = {
