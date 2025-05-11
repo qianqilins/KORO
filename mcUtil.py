@@ -38,7 +38,7 @@ def mingchaoRefresh(token):
 def serverSwich(token, devCode):
     url = "http://api.kurobbs.com/config/dict/timingSwitch"
     headers = {
-        "version": "2.2.0",
+        "version": "2.4.4",
         "devCode": devCode,
         "source": "android",
         "token": token,
