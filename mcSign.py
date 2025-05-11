@@ -5,8 +5,8 @@ def mingchaoSignin(token, roleId, userId):
     urlsignin = "https://api.kurobbs.com/encourage/signIn/v2"
     headers = {
         "token": token,
-        "devCode": "Kuro/2.2.0 KuroGameBox/2.2.0",
-        "User-Agent": "Kuro/2.2.0 KuroGameBox/2.2.0",
+        "devCode": "Kuro/2.4.4 KuroGameBox/2.4.4",
+        "User-Agent": "Kuro/2.4.4 KuroGameBox/2.4.4",
         "source": "android"
     }
     datasign = {
@@ -35,8 +35,8 @@ def getmingchaoSignprize(token, roleId, userId):
     urlqueryRecord = "https://api.kurobbs.com/encourage/signIn/queryRecordV2"
     headers = {
         "token": token,
-        "devCode": "Kuro/2.2.0 KuroGameBox/2.2.0",
-        "User-Agent": "Kuro/2.2.0 KuroGameBox/2.2.0",
+        "devCode": "Kuro/2.4.4 KuroGameBox/2.4.4",
+        "User-Agent": "Kuro/2.4.4 KuroGameBox/2.4.4",
         "source": "android"
     }
     data = {
