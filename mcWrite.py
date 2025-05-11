@@ -8,8 +8,8 @@ def mcIndex(token, roleId, userId):
     url = "http://api.kurobbs.com/gamer/roleBox/aki/exploreIndex"
     headers = {
         "token": token,
-        "devCode": "Kuro/2.2.0 KuroGameBox/2.2.0",
-        "User-Agent": "Kuro/2.2.0 KuroGameBox/2.2.0",
+        "devCode": "Kuro/2.4.4 KuroGameBox/2.4.4",
+        "User-Agent": "Kuro/2.4.4 KuroGameBox/2.4.4",
         "source": "android"
     }
     data = {
@@ -29,8 +29,8 @@ def mcBaseData(token, roleId, userId):
     url = "http://api.kurobbs.com/gamer/roleBox/aki/baseData"
     headers = {
         "token": token,
-        "devCode": "Kuro/2.2.0 KuroGameBox/2.2.0",
-        "User-Agent": "Kuro/2.2.0 KuroGameBox/2.2.0",
+        "devCode": "Kuro/2.4.4 KuroGameBox/2.4.4",
+        "User-Agent": "Kuro/2.4.4 KuroGameBox/2.4.4",
         "source": "android"
     }
     data = {
@@ -50,8 +50,8 @@ def mcRoleData(token, roleId, userId):
     url = "http://api.kurobbs.com/gamer/roleBox/aki/roleData"
     headers = {
         "token": token,
-        "devCode": "Kuro/2.2.0 KuroGameBox/2.2.0",
-        "User-Agent": "Kuro/2.2.0 KuroGameBox/2.2.0",
+        "devCode": "Kuro/2.4.4 KuroGameBox/2.4.4",
+        "User-Agent": "Kuro/2.4.4 KuroGameBox/2.4.4",
         "source": "android"
     }
     data = {
