@@ -6,7 +6,7 @@ def zhansuangSignin(token, devCode, roleId, userId):
     headers = {
         "token": token,
         "devCode": devCode,
-        "User-Agent": "Kuro/2.2.0 KuroGameBox/2.2.0",
+        "User-Agent": "Kuro/2.4.4 KuroGameBox/2.4.4",
         "source": "android"
     }
     datasign = {
@@ -36,7 +36,7 @@ def getzhansuangSignprize(token, devCode, roleId, userId):
     headers = {
         "token": token,
         "devCode": devCode,
-        "User-Agent": "Kuro/2.2.0 KuroGameBox/2.2.0",
+        "User-Agent": "Kuro/2.4.4 KuroGameBox/2.4.4",
         "source": "android"
     }
     data = {
