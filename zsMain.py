@@ -7,7 +7,7 @@ from zsWrite import zsWrite, zsBossWrite, zsMonthWrite, zsCharWrite
 
 class zhansuangTableCode:
     data = json.loads(str(zhansuangRefresh(token, devCode)))
-
+https://github.com/qianqilins/KORO/blob/main/zsMain.py
     gameId = data['data']['gameId']
     if gameId == 2:
     	gameName = '战双帕弥什'
@@ -37,7 +37,7 @@ print('签到\n'+zhansuangSignin(token, devCode, zs.roleId, zs.userId))
 #     print('获得补给：'+zhansuangSignin(token, devCode, zs.roleId, zs.userId))
 
 zsWrite(zs.gameName, zs.roleName, zs.roleId, zs.serverTime, zs.signInTxt, zs.actionData, zs.dormData, zs.activeData)
-zsMonthWrite(token, zs.roleId)
+# zsMonthWrite(token, zs.roleId)
 zsBossWrite(zs.bossData)
 # 角色概述
 # zsCharWrite(token, zs.roleId)
